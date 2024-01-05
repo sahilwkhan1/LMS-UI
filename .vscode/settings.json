@@ -1,0 +1,5 @@
+{
+  "appService.zipIgnorePattern": ["node_modules{,/**}", ".vscode{,/**}"],
+  "appService.defaultWebAppToDeploy": "undefined/subscriptions/ee00956e-14e9-4aff-853b-a71c1b74c4e4/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/test-lms-ttt",
+  "appService.deploySubpath": "."
+}
