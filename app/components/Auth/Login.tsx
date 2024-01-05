@@ -117,7 +117,7 @@ const Login: FC<Props> = ({ setRoute, setOpen, refetch }) => {
           <FcGoogle
             size={30}
             className="cursor-pointer mr-2"
-            onClick={() => signIn("google", { callbackUrl: 'https://lms-ui-q7aq.vercel.app/' )}
+            onClick={() => signIn("google", { callbackUrl: 'https://lms-ui-q7aq.vercel.app/' })}
           />
           <AiFillGithub
             size={30}
