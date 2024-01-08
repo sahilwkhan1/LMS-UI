@@ -41,7 +41,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
   } = useLoadUserQuery(undefined, {});
   const { data } = useSession();
   const [socialAuth, { isSuccess, error }] = useSocialAuthMutation();
-  const { getUsersAllCourses,data:courseData, isLoading: courseLaoding} = useGetUsersAllCoursesQuery();
+  const [getUsersAllCourses,{ data:courseData, isLoading: courseLaoding}] = useGetUsersAllCoursesQuery();
 
   const [logout, setLogout] = useState(false);
   const date = new Date();
