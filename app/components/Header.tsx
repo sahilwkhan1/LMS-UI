@@ -21,7 +21,6 @@ import Loader from "./Loader/Loader";
 import AppLogo from "../../public/assests/AppLogo.png";
 import DarkLogo from "../../public/assests/DarkLogo.png";
 import { useTheme } from "next-themes";
-import { useGetUsersAllCoursesQuery } from "@/redux/features/courses/coursesApi";
 
 type Props = {
   open: boolean;
@@ -41,8 +40,6 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
   } = useLoadUserQuery(undefined, {});
   const { data } = useSession();
   const [socialAuth, { isSuccess, error }] = useSocialAuthMutation();
-  // const [{ data:courseData, isLoading: courseLaoding}] = useGetUsersAllCoursesQuery();
-
   const [logout, setLogout] = useState(false);
   const date = new Date();
   const currentYear = date.getFullYear();
@@ -55,14 +52,11 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
     if (!isLoading) {
       if (!userData) {
         if (data) {
-          // socialAuth({
-          //   email: data?.user?.email,
-          //   name: data?.user?.name,
-          //   avatar: data?.user?.image,
-          // });
-          fetch("https://fakestoreapi.com/products/1");
-          // getUsersAllCourses();
-          console.log("ssss")
+          socialAuth({
+            email: data?.user?.email,
+            name: data?.user?.name,
+            avatar: data?.user?.image,
+          });
           refetch();
         }
       }
