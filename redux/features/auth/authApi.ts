@@ -68,8 +68,8 @@ export const authApi = apiSlice.injectEndpoints({
     }),
     socialAuth: builder.mutation({
       query: ({ email, name, avatar }) => ({
-        url: "test",
-        method: "GET",
+        url: "social-auth",
+        method: "POST",
         body: {
           email,
           name,
